@@ -1,7 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\CAD\Migrations\20220527193940_CriarTabelas.cs" />
+    <Compile Remove="Areas\CAD\Migrations\20220527193940_CriarTabelas.Designer.cs" />
+    <Compile Remove="Areas\CAD\Migrations\20220527194643_CriarTabelas.cs" />
+    <Compile Remove="Areas\CAD\Migrations\20220527194643_CriarTabelas.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Danps.Business\Danps.Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\CAD\Migrations\" />
+  </ItemGroup>
 
 </Project>

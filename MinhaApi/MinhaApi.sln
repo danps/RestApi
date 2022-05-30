@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67D00776-53E4-4519-995F-27E9740AFDE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danps.Data", "src\Danps.Data\Danps.Data.csproj", "{8E193639-0168-41A4-BBC4-D7F9FB404031}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danps.Data", "src\Danps.Data\Danps.Data.csproj", "{8E193639-0168-41A4-BBC4-D7F9FB404031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danps.Business", "src\Danps.Business\Danps.Business.csproj", "{8107FD5E-FCDC-472A-8F73-BD53F995DF78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danps.Business", "src\Danps.Business\Danps.Business.csproj", "{8107FD5E-FCDC-472A-8F73-BD53F995DF78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
