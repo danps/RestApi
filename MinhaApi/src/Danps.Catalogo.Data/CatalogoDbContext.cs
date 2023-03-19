@@ -3,12 +3,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Danps.Catalogo.Data
 {
-    public class CatalogoContext : DbContext
+    public class CatalogoDbContext : DbContext
     {
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
-        public CatalogoContext(DbContextOptions<CatalogoContext> options) : base(options) { }
+        //Descomentar quando for executar o Migrations - NET 7
+        /*
+        */
+        public CatalogoDbContext()
+        {
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Data Source=blog.db");
+        }
+
+        public CatalogoDbContext(DbContextOptions<CatalogoDbContext> options) : base(options)
+        {
+        }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -27,6 +40,7 @@ namespace Danps.Catalogo.Data
 
             return base.SaveChangesAsync(cancellationToken);
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var property in modelBuilder.Model.GetEntityTypes()
@@ -34,12 +48,11 @@ namespace Danps.Catalogo.Data
                     .Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoDbContext).Assembly);
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }

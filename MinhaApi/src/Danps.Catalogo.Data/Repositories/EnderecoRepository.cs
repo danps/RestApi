@@ -5,7 +5,7 @@ namespace Danps.Catalogo.Data
 {
     public class EnderecoRepository : Repository<Endereco>, IEnderecoRepository
     {
-        public EnderecoRepository(CatalogoContext context) : base(context)
+        public EnderecoRepository(CatalogoDbContext context) : base(context)
         {
         }
 

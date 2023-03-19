@@ -7,147 +7,152 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+#nullable disable
+
 namespace Danps.Catalogo.Data.Migrations
 {
-    [DbContext(typeof(CatalogoContext))]
-    [Migration("20220527195034_CriarTabelas")]
+    [DbContext(typeof(CatalogoDbContext))]
+    [Migration("20230313110345_CriarTabelas")]
     partial class CriarTabelas
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.25")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "7.0.3")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Danps.Catalogo.Domain.Endereco", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("seq_my_endereco")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("seq_my_endereco");
 
                     b.Property<string>("Bairro")
                         .IsRequired()
-                        .HasColumnName("bairro")
-                        .HasColumnType("varchar(127)");
+                        .HasColumnType("varchar(127)")
+                        .HasColumnName("bairro");
 
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasColumnName("cep")
-                        .HasColumnType("varchar(8)");
+                        .HasColumnType("varchar(8)")
+                        .HasColumnName("cep");
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasColumnName("cidade")
-                        .HasColumnType("varchar(127)");
+                        .HasColumnType("varchar(127)")
+                        .HasColumnName("cidade");
 
                     b.Property<string>("Complemento")
-                        .HasColumnName("complemento")
-                        .HasColumnType("varchar(250)");
+                        .IsRequired()
+                        .HasColumnType("varchar(250)")
+                        .HasColumnName("complemento");
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasColumnName("uf")
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("uf");
 
                     b.Property<Guid>("FornecedorId")
-                        .HasColumnName("seq_my_fornecedor")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("seq_my_fornecedor");
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
-                        .HasColumnName("logradouro")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("logradouro");
 
                     b.Property<string>("Numero")
                         .IsRequired()
-                        .HasColumnName("numero")
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(50)")
+                        .HasColumnName("numero");
 
                     b.HasKey("Id");
 
                     b.HasIndex("FornecedorId")
                         .IsUnique();
 
-                    b.ToTable("my_endereco");
+                    b.ToTable("my_endereco", (string)null);
                 });
 
             modelBuilder.Entity("Danps.Catalogo.Domain.Fornecedor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("seq_my_fornecedor")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("seq_my_fornecedor");
 
                     b.Property<bool>("Ativo")
-                        .HasColumnName("ind_ativo")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("ind_ativo");
 
                     b.Property<string>("Documento")
                         .IsRequired()
-                        .HasColumnName("num_documento")
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("num_documento");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnName("nom_fornecedor")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("nom_fornecedor");
 
                     b.Property<int>("TipoFornecedor")
-                        .HasColumnName("idt_tipo_fornecedor")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("idt_tipo_fornecedor");
 
                     b.HasKey("Id");
 
-                    b.ToTable("my_fornecedor");
+                    b.ToTable("my_fornecedor", (string)null);
                 });
 
             modelBuilder.Entity("Danps.Catalogo.Domain.Produto", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("seq_my_produto")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("seq_my_produto");
 
                     b.Property<bool>("Ativo")
-                        .HasColumnName("ind_ativo")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("ind_ativo");
 
                     b.Property<DateTime>("DataCadastro")
-                        .HasColumnName("dat_inclusao")
-                        .HasColumnType("datetime");
+                        .HasColumnType("datetime")
+                        .HasColumnName("dat_inclusao");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnName("dsc_produto")
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("varchar(1000)")
+                        .HasColumnName("dsc_produto");
 
                     b.Property<Guid>("FornecedorId")
-                        .HasColumnName("seq_my_fornecedor")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("seq_my_fornecedor");
 
                     b.Property<string>("Imagem")
                         .IsRequired()
-                        .HasColumnName("dsc_imagem")
-                        .HasColumnType("varchar(127)");
+                        .HasColumnType("varchar(127)")
+                        .HasColumnName("dsc_imagem");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnName("nom_produto")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("nom_produto");
 
                     b.Property<string>("Valor")
                         .IsRequired()
-                        .HasColumnName("val_produto")
-                        .HasColumnType("varchar(1000)");
+                        .HasColumnType("varchar(1000)")
+                        .HasColumnName("val_produto");
 
                     b.HasKey("Id");
 
                     b.HasIndex("FornecedorId");
 
-                    b.ToTable("my_produto");
+                    b.ToTable("my_produto", (string)null);
                 });
 
             modelBuilder.Entity("Danps.Catalogo.Domain.Endereco", b =>
@@ -155,8 +160,9 @@ namespace Danps.Catalogo.Data.Migrations
                     b.HasOne("Danps.Catalogo.Domain.Fornecedor", "Fornecedor")
                         .WithOne("Endereco")
                         .HasForeignKey("Danps.Catalogo.Domain.Endereco", "FornecedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Fornecedor");
                 });
 
             modelBuilder.Entity("Danps.Catalogo.Domain.Produto", b =>
@@ -164,8 +170,17 @@ namespace Danps.Catalogo.Data.Migrations
                     b.HasOne("Danps.Catalogo.Domain.Fornecedor", "Fornecedor")
                         .WithMany("Produtos")
                         .HasForeignKey("FornecedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Fornecedor");
+                });
+
+            modelBuilder.Entity("Danps.Catalogo.Domain.Fornecedor", b =>
+                {
+                    b.Navigation("Endereco")
+                        .IsRequired();
+
+                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

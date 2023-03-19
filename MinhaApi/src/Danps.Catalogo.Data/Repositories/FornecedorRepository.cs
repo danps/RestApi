@@ -5,7 +5,7 @@ namespace Danps.Catalogo.Data
 {
     public class FornecedorRepository : Repository<Fornecedor>, IFornecedorRepository
     {
-        public FornecedorRepository(CatalogoContext context) : base(context)
+        public FornecedorRepository(CatalogoDbContext context) : base(context)
         {
         }
 

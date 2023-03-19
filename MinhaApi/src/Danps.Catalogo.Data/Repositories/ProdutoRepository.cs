@@ -5,7 +5,7 @@ namespace Danps.Catalogo.Data
 {
     public class ProdutoRepository : Repository<Produto>, IProdutoRepository
     {
-        public ProdutoRepository(CatalogoContext context) : base(context)
+        public ProdutoRepository(CatalogoDbContext context) : base(context)
         {
         }
 

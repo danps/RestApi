@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danps.Catalogo.Domain", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danps.Catalogo.Data", "src\Danps.Catalogo.Data\Danps.Catalogo.Data.csproj", "{BCC89332-56DA-4B30-BDA5-8D7C5EEEE004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Danps.Catalogo.Api", "src\Danps.Catalogo.Api\Danps.Catalogo.Api.csproj", "{4B75F4C0-E085-4A28-ABAA-586AF7100762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Danps.Catalogo.Api", "src\Danps.Catalogo.Api\Danps.Catalogo.Api.csproj", "{F8214D65-394D-4C24-ADD5-DA7F845CAF2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{BCC89332-56DA-4B30-BDA5-8D7C5EEEE004}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCC89332-56DA-4B30-BDA5-8D7C5EEEE004}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCC89332-56DA-4B30-BDA5-8D7C5EEEE004}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B75F4C0-E085-4A28-ABAA-586AF7100762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B75F4C0-E085-4A28-ABAA-586AF7100762}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B75F4C0-E085-4A28-ABAA-586AF7100762}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B75F4C0-E085-4A28-ABAA-586AF7100762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8214D65-394D-4C24-ADD5-DA7F845CAF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8214D65-394D-4C24-ADD5-DA7F845CAF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8214D65-394D-4C24-ADD5-DA7F845CAF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8214D65-394D-4C24-ADD5-DA7F845CAF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,7 +43,7 @@ Global
 		{A0A5A623-D0AE-43CE-B78F-409D34D7DC66} = {67D00776-53E4-4519-995F-27E9740AFDE1}
 		{ACE372C4-D847-4190-BA7C-BA1F1B9D5979} = {67D00776-53E4-4519-995F-27E9740AFDE1}
 		{BCC89332-56DA-4B30-BDA5-8D7C5EEEE004} = {67D00776-53E4-4519-995F-27E9740AFDE1}
-		{4B75F4C0-E085-4A28-ABAA-586AF7100762} = {67D00776-53E4-4519-995F-27E9740AFDE1}
+		{F8214D65-394D-4C24-ADD5-DA7F845CAF2F} = {67D00776-53E4-4519-995F-27E9740AFDE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CBC7D3CB-1FAC-4D48-9C13-9003205954FA}
